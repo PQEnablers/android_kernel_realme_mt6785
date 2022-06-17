@@ -31,10 +31,10 @@ struct LCM_DRIVER *lcm_driver_list[] = {
 #if defined(HX83102P_WXGA_VDO_INCELL_BOE)
 	&hx83102p_wxga_vdo_incell_boe_lcm_drv,
 #endif
-#if defined(OPLUS20730_SAMSUNG_AMS643XY04_DSI_CMD)
-	&oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_1,
-	&oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_2,
-        &oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_3,
+#if defined(OPPO20730_SAMSUNG_AMS643XY04_DSI_CMD)
+	&oppo20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_1,
+	&oppo20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_2,
+        &oppo20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_3,
 #endif
 #if defined(ILT9882N_TRULY_EVEN_HDP_DSI_VDO_LCM)
 	&ilt9882n_truly_even_hdp_dsi_vdo_lcm_drv,

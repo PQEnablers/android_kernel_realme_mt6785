@@ -2406,9 +2406,9 @@ void lcm_set_aod_area_test(void *handle)
 	push_table22(handle, lcm_aod_area,
 			 sizeof(lcm_aod_area)/sizeof(lcm_aod_area[0]), 1);
 }
-struct LCM_DRIVER oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_1 =
+struct LCM_DRIVER oppo20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_1 =
 {
-	.name = "oplus20730_samsung_ams643xy04_lcm_drv_1",
+	.name = "oppo20730_samsung_ams643xy04_lcm_drv_1",
 	.set_util_funcs = lcm_set_util_funcs,
 	.get_params = lcm_get_params,
 	.init = lcm_init,
@@ -2437,9 +2437,9 @@ struct LCM_DRIVER oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_1 =
 	.set_aod_cv_mode = lcm_set_aod_cv_mode,
 	/* #endif */ /* OPLUS_FEATURE_RAMLESS_AOD */
 };
-struct LCM_DRIVER oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_2 =
+struct LCM_DRIVER oppo20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_2 =
 {
-	.name = "oplus20730_samsung_ams643xy04_lcm_drv_2",
+	.name = "oppo20730_samsung_ams643xy04_lcm_drv_2",
 	.set_util_funcs = lcm_set_util_funcs,
 	.get_params = lcm_get_params,
 	.init = lcm_init,
@@ -2468,9 +2468,9 @@ struct LCM_DRIVER oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_2 =
 	.set_aod_cv_mode = lcm_set_aod_cv_mode,
 	/* #endif */ /* OPLUS_FEATURE_RAMLESS_AOD */
 };
-struct LCM_DRIVER oplus20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_3 =
+struct LCM_DRIVER oppo20730_samsung_ams643xy04_1080p_dsi_vdo_lcm_drv_3 =
 {
-        .name = "oplus20730_samsung_ams643xy04_lcm_drv_3",
+        .name = "oppo20730_samsung_ams643xy04_lcm_drv_3",
         .set_util_funcs = lcm_set_util_funcs,
         .get_params = lcm_get_params,
         .init = lcm_init2,

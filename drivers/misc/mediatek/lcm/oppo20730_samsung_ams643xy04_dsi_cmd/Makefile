@@ -3,7 +3,7 @@
 #
 #include $(srctree)/drivers/misc/mediatek/Makefile.custom
 subdir-ccflags-y += -Werror
-obj-y += oplus20730_samsung_ams643xy04_1080p_dsi_vdo.o
+obj-y += oppo20730_samsung_ams643xy04_1080p_dsi_vdo.o
 
 ccflags-$(CONFIG_MTK_LCM) += -I$(srctree)/drivers/misc/mediatek/lcm/inc
 

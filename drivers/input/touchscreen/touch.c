@@ -353,15 +353,15 @@ bool __init tp_judge_ic_match(char *tp_ic_name)
 	case 20731:
 	case 20732:
 		pr_info("%s forward for 20730\n", __func__);
-                if (strstr(tp_ic_name, "focaltech,fts") && strstr(saved_command_line, "oplus20730_samsung_ams643xy04_lcm_drv_1")) {
+                if (strstr(tp_ic_name, "focaltech,fts") && strstr(saved_command_line, "oppo20730_samsung_ams643xy04_lcm_drv_1")) {
 			return true;
 		}
 
-	        if (strstr(tp_ic_name, "Goodix-gt9886") && strstr(saved_command_line, "oplus20730_samsung_ams643xy04_lcm_drv_2")) {
+	        if (strstr(tp_ic_name, "Goodix-gt9886") && strstr(saved_command_line, "oppo20730_samsung_ams643xy04_lcm_drv_2")) {
 		return true;
 		}
 
-		if (strstr(tp_ic_name, "Goodix-gt9886") && strstr(saved_command_line, "oplus20730_samsung_ams643xy04_lcm_drv_3")) {
+		if (strstr(tp_ic_name, "Goodix-gt9886") && strstr(saved_command_line, "oppo20730_samsung_ams643xy04_lcm_drv_3")) {
 		return true;
 		}
                 pr_err("[TP] ERROR! ic is not match driver\n");
@@ -760,19 +760,19 @@ bool  tp_judge_ic_match_commandline(struct panel_info *panel_data)
 	case 20732:
 		pr_info("%s forward for 20730\n", __func__);
 		is_tp_type_got_in_match = true;
-		if (strstr(saved_command_line, "oplus20730_samsung_ams643xy04_lcm_drv_1")) {
+		if (strstr(saved_command_line, "oppo20730_samsung_ams643xy04_lcm_drv_1")) {
 			pr_err("[TP] touch ic = FT_3518 \n");
 			tp_used_index = focal_ft3518;
 			g_tp_dev_vendor = TP_SAMSUNG;
 		}
 
-		if (strstr(saved_command_line, "oplus20730_samsung_ams643xy04_lcm_drv_2")) {
+		if (strstr(saved_command_line, "oppo20730_samsung_ams643xy04_lcm_drv_2")) {
 			pr_err("[TP] touch ic = Goodix-gt9886 \n");
 			tp_used_index =  goodix_gt9886;
 			g_tp_dev_vendor = TP_SAMSUNG;
 		}
 
-		if (strstr(saved_command_line, "oplus20730_samsung_ams643xy04_lcm_drv_3")) {
+		if (strstr(saved_command_line, "oppo20730_samsung_ams643xy04_lcm_drv_3")) {
 			pr_err("[TP] touch ic = Goodix-gt9886 \n");
 			tp_used_index =  goodix_gt9886;
 			g_tp_dev_vendor = TP_SAMSUNG;
