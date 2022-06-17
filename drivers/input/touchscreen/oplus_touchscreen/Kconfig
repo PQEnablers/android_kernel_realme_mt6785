@@ -33,9 +33,19 @@ config TOUCHPANEL_FOCAL
 	bool "TP Synaptics_IC enable or not for OPLUS"
 	---help---
 	say Y to enable driver for Touchpanel using FOCALTECK_IC
+
+config TOUCHPANEL_GOODIX
+#	default y
+	bool "TP Synaptics_IC enable or not for OPPO"
+	---help---
+	say Y to enable driver for Touchpanel using GOODIX_IC
 	
 source "drivers/input/touchscreen/oplus_touchscreen/util_interface/Kconfig"
 
 if TOUCHPANEL_FOCAL
 source "drivers/input/touchscreen/oplus_touchscreen/Focal/Kconfig"
+endif
+
+if TOUCHPANEL_GOODIX
+source "drivers/input/touchscreen/oplus_touchscreen/Goodix/Kconfig"
 endif
