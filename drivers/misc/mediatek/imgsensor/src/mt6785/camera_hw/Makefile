@@ -15,7 +15,8 @@
 # Makefile for misc devices that really don't fit anywhere else.
 #
 
-ccflags-y += -I$(MTK_CUSTOM_PATH)/imgsensor/inc \
+ccflags-y += -I$(MTK_CUSTOM_PATH)/imgsensor/inc
+
 obj-y		+= wl2864/
 obj-y		+= regulator/
 obj-y		+= gpio/
