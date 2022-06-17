@@ -15,7 +15,7 @@
 ### ------------------------------------------------------------------------------
 ##################################################################################
 
--include ../out/oplus_native_features.mk
+-include oplus_native_features.mk
 
 ###ifdef OPLUS_ARCH_INJECT
 OPLUS_CONNECTIVITY_NATIVE_FEATURE_SET :=
@@ -105,7 +105,6 @@ OPLUS_FEATURE_CORE_CTL \
 OPLUS_FEATURE_STORAGE_TOOL \
 OPLUS_FEATURE_CAMERA_COMMON \
 OPLUS_FEATURE_WIFI_OPLUSWFD
-
 
 $(foreach myfeature,$(ALLOWED_MCROS),\
          $(warning myfeature is $(myfeature)) \
