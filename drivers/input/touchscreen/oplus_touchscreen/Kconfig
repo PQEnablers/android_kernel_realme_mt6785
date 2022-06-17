@@ -36,7 +36,7 @@ config TOUCHPANEL_FOCAL
 
 config TOUCHPANEL_GOODIX
 #	default y
-	bool "TP Synaptics_IC enable or not for OPPO"
+	bool "TP Synaptics_IC enable or not for OPLUS"
 	---help---
 	say Y to enable driver for Touchpanel using GOODIX_IC
 	

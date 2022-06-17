@@ -8,7 +8,6 @@
 
 #include <linux/uaccess.h>
 #include "../touchpanel_common.h"
-#include "../touchpanel_healthinfo.h"
 
 #include <linux/firmware.h>
 #include <linux/rtc.h>
