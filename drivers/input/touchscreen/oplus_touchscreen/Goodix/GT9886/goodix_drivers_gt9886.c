@@ -273,7 +273,7 @@ exit:
 /*********** End of special i2c tranfer interface used for goodix read/write******************/
 
 
-/********* Start of function that work for oppo_touchpanel_operations callbacks***************/
+/********* Start of function that work for oplus_touchpanel_operations callbacks***************/
 static int goodix_clear_irq(void *chip_data)
 {
     int ret = -1;
@@ -871,10 +871,10 @@ int goodix_get_channel_num(struct i2c_client *client, u32 *sen_num, u32 *drv_num
     return 0;
 }
 
-/*********** End of function that work for oppo_touchpanel_operations callbacks***************/
+/*********** End of function that work for oplus_touchpanel_operations callbacks***************/
 
 
-/********* Start of implementation of oppo_touchpanel_operations callbacks********************/
+/********* Start of implementation of oplus_touchpanel_operations callbacks********************/
 static int goodix_ftm_process(void *chip_data)
 {
     struct chip_data_gt9886 *chip_info = (struct chip_data_gt9886 *)chip_data;
@@ -2898,7 +2898,7 @@ static int goodix_enable_single_tap(void *chip_data, bool enable)
     return 0;
 }
 
-static struct oppo_touchpanel_operations goodix_ops = {
+static struct oplus_touchpanel_operations goodix_ops = {
     .ftm_process                 = goodix_ftm_process,
     .get_vendor                  = goodix_get_vendor,
     .get_chip_info               = goodix_get_chip_info,
@@ -2924,7 +2924,7 @@ static struct oppo_touchpanel_operations goodix_ops = {
     .health_report_v2            = goodix_get_health_info_v2,
     .enable_single_tap           = goodix_enable_single_tap,
 };
-/********* End of implementation of oppo_touchpanel_operations callbacks**********************/
+/********* End of implementation of oplus_touchpanel_operations callbacks**********************/
 
 /******** Start of implementation of debug_info_proc_operations callbacks*********************/
 static void goodix_debug_info_read(struct seq_file *s, void *chip_data, debug_type debug_type)

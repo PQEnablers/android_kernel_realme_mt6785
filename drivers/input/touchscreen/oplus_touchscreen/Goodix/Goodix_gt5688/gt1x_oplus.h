@@ -8,7 +8,7 @@
 
 #include "../goodix_common.h"
 #include "../goodix_tool.h"
-#include "gt1x_generic_oppo.h"
+#include "gt1x_generic_oplus.h"
 
 #define set_reg_bit(reg, pos, val)        ((reg) = ((reg) & (~(1 << (pos)))) | (!!(val) << (pos)))
 

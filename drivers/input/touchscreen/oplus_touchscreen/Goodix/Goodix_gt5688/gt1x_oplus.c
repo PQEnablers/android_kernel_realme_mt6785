@@ -17,7 +17,7 @@
 #include <linux/task_work.h>
 #include <linux/jiffies.h>
 
-#include "gt1x_oppo.h"
+#include "gt1x_oplus.h"
 
 #define GTP_I2C_NAME                "Goodix-TS"
 
@@ -2323,14 +2323,14 @@ static void goodix_reserve_read(struct seq_file *s, void *chip_data)
 //    return upmu_get_rgs_chrdet();
 //}
 //#else
-//extern bool oppo_chg_is_usb_present(void);
+//extern bool oplus_chg_is_usb_present(void);
 //static int goodix_get_usb_state(void)
 //{
-//    return oppo_chg_is_usb_present();
+//    return oplus_chg_is_usb_present();
 //}
 //#endif
 
-struct oppo_touchpanel_operations goodix_gt5688_ops = {
+struct oplus_touchpanel_operations goodix_gt5688_ops = {
     .ftm_process      = goodix_ftm_process,
     .get_vendor       = goodix_get_vendor,
     .get_chip_info    = goodix_get_chip_info,

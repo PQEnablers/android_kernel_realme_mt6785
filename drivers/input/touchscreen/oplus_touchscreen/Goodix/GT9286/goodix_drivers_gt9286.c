@@ -193,7 +193,7 @@ static s32 goodix_send_cmd(void *chip_data, u8 cmd, u8 data)
 /*********** End of special i2c tranfer interface used for goodix read/write******************/
 
 
-/********* Start of function that work for oppo_touchpanel_operations callbacks***************/
+/********* Start of function that work for oplus_touchpanel_operations callbacks***************/
 static int goodix_clear_irq(void *chip_data)
 {
     int ret = -1;
@@ -1290,10 +1290,10 @@ read_data_exit:
     return;
 }
 
-/*********** End of function that work for oppo_touchpanel_operations callbacks***************/
+/*********** End of function that work for oplus_touchpanel_operations callbacks***************/
 
 
-/********* Start of implementation of oppo_touchpanel_operations callbacks********************/
+/********* Start of implementation of oplus_touchpanel_operations callbacks********************/
 static int goodix_ftm_process(void *chip_data)
 {
     struct chip_data_gt9286 *chip_info = (struct chip_data_gt9286 *)chip_data;
@@ -2048,7 +2048,7 @@ static void goodix_enable_game_mode(struct chip_data_gt9286 *chip_info, bool ena
     }
 }
 
-static struct oppo_touchpanel_operations goodix_ops = {
+static struct oplus_touchpanel_operations goodix_ops = {
     .ftm_process      = goodix_ftm_process,
     .get_vendor       = goodix_get_vendor,
     .get_chip_info    = goodix_get_chip_info,
@@ -2066,7 +2066,7 @@ static struct oppo_touchpanel_operations goodix_ops = {
 //    .get_usb_state    = goodix_get_usb_state,
     .specific_resume_operate = goodix_specific_resume_operate,
 };
-/********* End of implementation of oppo_touchpanel_operations callbacks**********************/
+/********* End of implementation of oplus_touchpanel_operations callbacks**********************/
 
 /******** Start of implementation of debug_info_proc_operations callbacks*********************/
 static void goodix_debug_info_read(struct seq_file *s, void *chip_data, debug_type debug_type)

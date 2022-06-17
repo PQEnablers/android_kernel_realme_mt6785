@@ -1,7 +1,7 @@
 #gt915 touchpanel driver
 
 
-obj-$(CONFIG_TOUCHPANEL_GOODIX_GT5688)	+= gt1x_oppo.o
+obj-$(CONFIG_TOUCHPANEL_GOODIX_GT5688)	+= gt1x_oplus.o
 #obj-$(CONFIG_GT5688_TOUCHPANEL_DRIVER)	+= gt1x_extents.o
 #obj-$(CONFIG_GT5688_TOUCHPANEL_DRIVER)	+= gt1x_generic.o
 #obj-$(CONFIG_GT5688_TOUCHPANEL_DEBUG)	+= gt1x_tools.o
