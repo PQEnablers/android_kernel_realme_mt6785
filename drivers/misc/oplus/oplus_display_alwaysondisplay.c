@@ -240,34 +240,6 @@ void oplus_display_aod_backlight()
 	oplus_primary_set_state(DISP_SLEPT);
 }
 
-int oplus_panel_get_aod_light_mode(void *buf)
-{
-	unsigned int *aod_mode = buf;
-	(*aod_mode) = aod_light_mode;
-	printk(KERN_INFO "oplus_panel_get_aod_light_mode = %d\n",aod_light_mode);
-	return 0;
-}
-
-int oplus_panel_set_aod_light_mode(void *buf)
-{
-	unsigned int *temp_save = buf;
-	int ret = 0;
-
-	pr_info("%s, oplus_display_aodlight_support = %d, aod_light_mode = %d\n", __func__, oplus_display_aodlight_support, *temp_save);
-	if (oplus_display_aodlight_support) {
-
-		if (primary_display_get_fp_hbm_state()) {
-			printk(KERN_INFO "oplus_set_aod_light_mode = %d return on hbm\n",(*temp_save));
-			return 0;
-		}
-		aod_light_mode = (*temp_save);
-		ret = primary_display_aod_backlight(aod_light_mode);
-		printk(KERN_INFO "oplus_panel_set_aod_light_mode = %d\n",(*temp_save));
-	}
-
-	return 0;
-}
-
 /* #ifdef OPLUS_FEATURE_RAMLESS_AOD */
 int disp_lcm_set_aod_area(struct disp_lcm_handle *plcm, void *handle, unsigned char *area)
 {
