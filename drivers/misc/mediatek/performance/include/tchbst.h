@@ -30,9 +30,9 @@
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
-/*tchbst 100 ms*/
+/*tchbst 100ms*/
 #define TOUCH_TIMEOUT_NSEC 100000000
-#define TOUCH_BOOST_EAS 80
+#define TOUCH_BOOST_EAS 50
 #define TOUCH_BOOST_OPP 2
 #define TOUCH_FSTB_ACTIVE_US 100000
 #define TOUCH_TIME_TO_LAST_TOUCH_MS 600000
