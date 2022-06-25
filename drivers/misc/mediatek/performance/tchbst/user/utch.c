@@ -332,6 +332,7 @@ static int mt_usrdebug_open(struct inode *inode, struct file *file)
 {
 	return single_open(file, mt_usrdebug_show, inode->i_private);
 }
+
 static const struct file_operations fop = {
 	.open = mt_usrdebug_open,
 	.write = mt_usrdebug_write,
@@ -339,10 +340,57 @@ static const struct file_operations fop = {
 	.llseek = seq_lseek,
 	.release = single_release,
 };
+
+/*---------------TOUCH_EVENT----------------------*/
+static ssize_t mt_touch_event_write(struct file *filp, const char *ubuf,
+		size_t cnt, loff_t *data)
+{
+	char buf[32];
+	int arg, ret, val;
+
+	arg = 0;
+
+	if (cnt >= sizeof(buf))
+		return -EINVAL;
+
+	if (copy_from_user(buf, ubuf, cnt))
+		return -EFAULT;
+	buf[cnt] = '\0';
+	ret = kstrtoint(buf, 10, &val);
+
+	if (ret < 0)
+		return ret;
+
+	if (val > 3)
+		return -EINVAL;
+
+	notify_touch(val);
+	return cnt;
+}
+
+static int mt_touch_event_show(struct seq_file *m, void *v)
+{
+	seq_printf(m, "touch_event\t%d\n", touch_event);
+	return 0;
+}
+
+static int mt_touch_event_open(struct inode *inode, struct file *file)
+{
+	return single_open(file, mt_touch_event_show, inode->i_private);
+}
+
+static const struct file_operations touch_event_fops = {
+	.open = mt_touch_event_open,
+	.write = mt_touch_event_write,
+	.read = seq_read,
+	.llseek = seq_lseek,
+	.release = single_release,
+};
+
 /*--------------------INIT------------------------*/
 int init_utch(struct proc_dir_entry *parent)
 {
-	struct proc_dir_entry *usrtch, *usrdebug, *usrtch_root;
+	struct proc_dir_entry *usrtch, *usrdebug, *usrtch_root, *touch_event_file;
 	int i;
 	int ret_val = 0;
 
@@ -391,6 +439,11 @@ int init_utch(struct proc_dir_entry *parent)
 	}
 	usrdebug = proc_create("usrdebug", 0664, usrtch_root, &fop);
 	if (!usrdebug) {
+		ret_val = -ENOMEM;
+		goto out_chrdev;
+	}
+	touch_event_file = proc_create("touch_event", 0664, usrtch_root, &touch_event_fops);
+	if (!touch_event_file) {
 		ret_val = -ENOMEM;
 		goto out_chrdev;
 	}
