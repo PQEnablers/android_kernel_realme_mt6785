@@ -350,22 +350,38 @@ static ssize_t mt_touch_event_write(struct file *filp, const char *ubuf,
 
 	arg = 0;
 
-	if (cnt >= sizeof(buf))
-		return -EINVAL;
+	mutex_lock(&notify_lock);
 
-	if (copy_from_user(buf, ubuf, cnt))
-		return -EFAULT;
+	if (cnt >= sizeof(buf)) {
+		ret = -EINVAL;
+		goto write_out;
+	}
+
+	if (copy_from_user(buf, ubuf, cnt)) {
+		ret = -EFAULT;
+		goto write_out;
+	}
+
 	buf[cnt] = '\0';
 	ret = kstrtoint(buf, 10, &val);
 
-	if (ret < 0)
-		return ret;
+	if (ret < 0) {
+		ret = -EINVAL;
+		goto write_out;
+	}
 
-	if (val > 3)
-		return -EINVAL;
+	if (val > 3) {
+		ret = -EINVAL;
+		goto write_out;
+	}
 
 	notify_touch(val);
-	return cnt;
+
+	ret = cnt;
+
+write_out:
+	mutex_unlock(&notify_lock);
+	return ret;
 }
 
 static int mt_touch_event_show(struct seq_file *m, void *v)
