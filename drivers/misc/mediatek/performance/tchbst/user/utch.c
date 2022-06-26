@@ -36,7 +36,7 @@ static struct ppm_limit_data *target_freq, *reset_freq;
 static int touch_boost_duration;
 static long long active_time;
 static int time_to_last_touch;
-static int deboost_when_render;
+static int deboost_when_render = 1;
 static int usrtch_debug;
 static int touch_event;/*touch down:1 */
 static ktime_t last_touch_time;
