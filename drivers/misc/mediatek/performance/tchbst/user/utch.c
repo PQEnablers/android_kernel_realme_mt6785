@@ -253,7 +253,7 @@ static int device_show(struct seq_file *m, void *v)
 		i, cluster_opp[i]);
 
 	seq_printf(m, "duration(ms):\t%d\n", touch_boost_duration);
-	seq_printf(m, "active_time(us):\t%d\n", (int)active_time);
+	seq_printf(m, "active_time(us):\t%lld\n", active_time);
 	seq_printf(m, "time_to_last_touch(ms):\t%d\n", time_to_last_touch);
 	seq_printf(m, "deboost_when_render:\t%d\n", deboost_when_render);
 	seq_printf(m, "touch_event:\t%d\n", touch_event);
