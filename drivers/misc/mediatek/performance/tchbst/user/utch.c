@@ -103,7 +103,7 @@ static void enable_touch_boost_timer(void)
 {
 	ktime_t ktime;
 
-	ktime = ktime_set(0, touch_boost_duration);
+	ktime = ktime_set(touch_boost_duration / 1000, 0);
 	hrtimer_start(&hrt1, ktime, HRTIMER_MODE_REL);
 	if (usrtch_debug)
 		pr_debug("touch_boost_duration:\t %d\n", touch_boost_duration);
@@ -252,7 +252,7 @@ static int device_show(struct seq_file *m, void *v)
 		seq_printf(m, "cluster_opp[%d]:\t%d\n",
 		i, cluster_opp[i]);
 
-	seq_printf(m, "duration(ns):\t%d\n", touch_boost_duration);
+	seq_printf(m, "duration(ms):\t%d\n", touch_boost_duration);
 	seq_printf(m, "active_time(us):\t%d\n", (int)active_time);
 	seq_printf(m, "time_to_last_touch(ms):\t%d\n", time_to_last_touch);
 	seq_printf(m, "deboost_when_render:\t%d\n", deboost_when_render);
@@ -419,7 +419,7 @@ int init_utch(struct proc_dir_entry *parent)
 
 	touch_event = 2;
 	touch_boost_opp = TOUCH_BOOST_OPP;
-	touch_boost_duration = TOUCH_TIMEOUT_NSEC;
+	touch_boost_duration = TOUCH_TIMEOUT_MSEC;
 	active_time = TOUCH_FSTB_ACTIVE_US;
 	time_to_last_touch = TOUCH_TIME_TO_LAST_TOUCH_MS;
 	last_touch_time = ktime_get();
